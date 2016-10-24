@@ -1,0 +1,17 @@
+bin
+obj
+*.suo
+*.user
+*.sln.docstates
+
+[Db]ebug/
+[Rr]elease/
+*.obj
+*.pdb
+
+_ReSaharper*
+
+Thumbs.db
+Desktop.ini
+SimpleBlog/Web.config
+*.exe
