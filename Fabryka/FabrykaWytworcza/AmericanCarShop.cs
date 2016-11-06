@@ -15,5 +15,14 @@ namespace FabrykaWytworcza
 			}
 			else return null;
 		}
+
+		public override Car OrderCar(string type)
+		{
+			Car car = CreateCar(type);
+			Console.WriteLine(string.Format("Creating american car of type {0}", type.GetType()));
+			car.Prepare();
+
+			return car;
+		}
 	}
 }

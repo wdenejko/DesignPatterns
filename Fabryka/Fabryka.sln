@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabrykaWytworcza", "Fabryka
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabrykaRefleksja", "FabrykaRefleksja\FabrykaRefleksja.csproj", "{717BD23E-2C17-41A5-9B4E-6373D0CA3F89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabrykaAbstrakcyjna", "FabrykaAbstrakcyjna\FabrykaAbstrakcyjna.csproj", "{E393C0E0-1291-49C0-829C-ECEB67958405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -25,5 +27,9 @@ Global
 		{717BD23E-2C17-41A5-9B4E-6373D0CA3F89}.Debug|x86.Build.0 = Debug|x86
 		{717BD23E-2C17-41A5-9B4E-6373D0CA3F89}.Release|x86.ActiveCfg = Release|x86
 		{717BD23E-2C17-41A5-9B4E-6373D0CA3F89}.Release|x86.Build.0 = Release|x86
+		{E393C0E0-1291-49C0-829C-ECEB67958405}.Debug|x86.ActiveCfg = Debug|x86
+		{E393C0E0-1291-49C0-829C-ECEB67958405}.Debug|x86.Build.0 = Debug|x86
+		{E393C0E0-1291-49C0-829C-ECEB67958405}.Release|x86.ActiveCfg = Release|x86
+		{E393C0E0-1291-49C0-829C-ECEB67958405}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
