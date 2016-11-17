@@ -1,110 +1,65 @@
-// ======== "Variables" (but not really) ==========
-// The "let" keyword defines an (immutable) value
-let myInt = 5
-let myFloat = 3.14
-let myString = "hello"   //note that no types needed
+// create an underlying type
+type FluentShape = {
+    label : string; 
+    color : string; 
+    onClick : FluentShape->FluentShape // a function type
+    }
 
-// ======== Lists ============
-let twoToFive = [2;3;4;5]        // Square brackets create a list with
-                                 // semicolon delimiters.
-let oneToFive = 1 :: twoToFive   // :: creates list with new 1st element
-// The result is [1;2;3;4;5]
-let zeroToFive = [0;1] @ twoToFive   // @ concats two lists
+let defaultShape = 
+    {label=""; color=""; onClick=fun shape->shape}
 
-// IMPORTANT: commas are never used as delimiters, only semicolons!
+let click shape = 
+    shape.onClick shape
 
-// ======== Functions ========
-// The "let" keyword also defines a named function.
-let square x = x * x          // Note that no parens are used.
-square 3                      // Now run the function. Again, no parens.
+let display shape = 
+    printfn "My label=%s and my color=%s" shape.label shape.color
+    shape   //return same shape
+let setLabel label shape = 
+   {shape with FluentShape.label = label}
 
-let add x y = x + y           // don't use add (x,y)! It means something
-                              // completely different.
-add 2 3                       // Now run the function.
+let setColor color shape = 
+   {shape with FluentShape.color = color}
 
-// to define a multiline function, just use indents. No semicolons needed.
-let evens list =
-   let isEven x = x%2 = 0     // Define "isEven" as an inner ("nested") function
-   List.filter isEven list    // List.filter is a library function
-                              // with two parameters: a boolean function
-                              // and a list to work on
+//add a click action to what is already there
+let appendClickAction action shape = 
+   {shape with FluentShape.onClick = shape.onClick >> action}
 
-evens oneToFive               // Now run the function
+// Compose two "base" functions to make a compound function.
+let setRedBox = setColor "red" >> setLabel "box" 
 
-// You can use parens to clarify precedence. In this example,
-// do "map" first, with two args, then do "sum" on the result.
-// Without the parens, "List.map" would be passed as an arg to List.sum
-let sumOfSquaresTo100 =
-   List.sum ( List.map square [1..100] )
+// Create another function by composing with previous function.
+// It overrides the color value but leaves the label alone.
+let setBlueBox = setRedBox >> setColor "blue"  
 
-// You can pipe the output of one operation to the next using "|>"
-// Here is the same sumOfSquares function written using pipes
-let sumOfSquaresTo100piped =
-   [1..100] |> List.map square |> List.sum  // "square" was defined earlier
+// Make a special case of appendClickAction
+let changeColorOnClick color = appendClickAction (setColor color)  
 
-// you can define lambdas (anonymous functions) using the "fun" keyword
-let sumOfSquaresTo100withFun =
-   [1..100] |> List.map (fun x->x*x) |> List.sum
+//setup some test values
+let redBox = defaultShape |> setRedBox
+let blueBox = defaultShape |> setBlueBox 
 
-// In F# returns are implicit -- no "return" needed. A function always
-// returns the value of the last expression used.
+// create a shape that changes color when clicked
+redBox 
+    |> display
+    |> changeColorOnClick "green"
+    |> click
+    |> display  // new version after the click
 
-// ======== Pattern Matching ========
-// Match..with.. is a supercharged case/switch statement.
-let simplePatternMatch =
-   let x = "a"
-   match x with
-    | "a" -> printfn "x is a"
-    | "b" -> printfn "x is b"
-    | _ -> printfn "x is something else"   // underscore matches anything
+// create a shape that changes label and color when clicked
+blueBox 
+    |> display
+    |> appendClickAction (setLabel "box2" >> setColor "green")  
+    |> click
+    |> display  // new version after the click
 
-// Some(..) and None are roughly analogous to Nullable wrappers
-let validValue = Some(99)
-let invalidValue = None
+let rainbow =
+    ["red";"orange";"yellow";"green";"blue";"indigo";"violet"]
 
-// In this example, match..with matches the "Some" and the "None",
-// and also unpacks the value in the "Some" at the same time.
-let optionPatternMatch input =
-   match input with
-    | Some i -> printfn "input is an int=%d" i
-    | None -> printfn "input is missing"
+let showRainbow = 
+    let setColorAndDisplay color = setColor color >> display 
+    rainbow 
+    |> List.map setColorAndDisplay 
+    |> List.reduce (>>)
 
-optionPatternMatch validValue
-optionPatternMatch invalidValue
-
-// ========= Complex Data Types =========
-
-// Tuple types are pairs, triples, etc. Tuples use commas.
-let twoTuple = 1,2
-let threeTuple = "a",2,true
-
-// Record types have named fields. Semicolons are separators.
-type Person = {First:string; Last:string}
-let person1 = {First="john"; Last="Doe"}
-
-// Union types have choices. Vertical bars are separators.
-type Temp = 
-    | DegreesC of float
-    | DegreesF of float
-let temp = DegreesF 98.6
-
-// Types can be combined recursively in complex ways.
-// E.g. here is a union type that contains a list of the same type:
-type Employee = 
-  | Worker of Person
-  | Manager of Employee list
-let jdoe = {First="John";Last="Doe"}
-let worker = Worker jdoe
-
-// ========= Printing =========
-// The printf/printfn functions are similar to the
-// Console.Write/WriteLine functions in C#.
-printfn "Printing an int %i, a float %f, a bool %b" 1 2.0 true
-printfn "A string %s, and something generic %A" "hello" [1;2;3;4]
-
-// all complex types have pretty printing built in
-printfn "twoTuple=%A,\nPerson=%A,\nTemp=%A,\nEmployee=%A" 
-         twoTuple person1 temp worker
-
-// There are also sprintf/sprintfn functions for formatting data
-// into a string, similar to String.Format.
+// test the showRainbow function
+defaultShape |> showRainbow 
