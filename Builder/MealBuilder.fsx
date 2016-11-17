@@ -54,5 +54,5 @@ let builder = new GreenCurryBuilder("Green Curry");
 shop.Construct(builder)
 builder.Meal.Show()
 let builder2 = new SpaghettiBuilder("Spaghetti");
-shop.Construct(builder)
-builder.Meal.Show()
+shop.Construct(builder2)
+builder2.Meal.Show()
