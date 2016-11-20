@@ -34,7 +34,7 @@ type Director() =
         builder.BuildPartA()
         builder.BuildPartB()
 // test
-let director = new Director()
+let director = new Director()   
 let b1 = new ConcreteBuilder1()
 let b2 = new ConcreteBuilder2()
 
