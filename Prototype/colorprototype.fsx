@@ -23,7 +23,6 @@ type Color(red : int, green : int, blue : int) =
         printfn "Cloning color RGB: %i %i %i" red green blue
         use stream = new MemoryStream()
         binFormatter.Serialize(stream, this)
-        let d = stream.Seek((int64)0, SeekOrigin.Begin)
         binFormatter.Deserialize(stream) :?> ColorPrototype
 
 type ColorManager() =
@@ -49,4 +48,4 @@ colormanager.Add "flame" (new Color(211, 34, 20))
 let color1 = colormanager.["red"].Clone()
 let color2 = colormanager.["peace"].Clone()
 let color3 = colormanager.["flame"].Clone()
-let deepCopy = DeepCopy colormanager
+let deepClone = colormanager.["green"].DeepClone()
