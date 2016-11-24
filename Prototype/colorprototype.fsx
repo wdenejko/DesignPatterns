@@ -1,12 +1,6 @@
 open System.Collections.Generic
-open Microsoft.FSharp.Reflection
 open System.IO
-open System.Reflection
-open System.Runtime.Serialization
 open System.Runtime.Serialization.Formatters.Binary
-open System.Text
-open System.Xml
-open System.Xml.Serialization
 
 [<AbstractClass>]
 type ColorPrototype() =
