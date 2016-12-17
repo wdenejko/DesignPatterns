@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{7F5791D0-73EB-4FF7-BD9F-7E81E6C04717}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PluggableAdapter/Program.cs">
+    <Files>
+      <File FileName="PluggableAdapter/Program.cs" Line="9" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.PluggableAdapter PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
