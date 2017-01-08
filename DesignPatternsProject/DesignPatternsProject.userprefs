@@ -1,18 +1,6 @@
 ﻿<Properties StartupConfiguration="{7A8DDC68-047F-496C-9982-71F0C53B91C0}|">
   <MonoDevelop.Ide.ItemProperties.DesignPatternsProject PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatternsProject/Web.config">
-    <Files>
-      <File FileName="DesignPatternsProject/Views/Customers/Index.cshtml" Line="26" Column="1" />
-      <File FileName="DesignPatternsProject/Views/Shared/_Layout.cshtml" Line="28" Column="45" />
-      <File FileName="DesignPatternsProject/Views/Movies/Index.cshtml" Line="57" Column="33" />
-      <File FileName="DesignPatternsProject/Views/Web.config" Line="10" Column="4" />
-      <File FileName="DesignPatternsProject/Views/Home/Index.cshtml" Line="28" Column="38" />
-      <File FileName="DesignPatternsProject/Startup.cs" Line="11" Column="26" />
-      <File FileName="DesignPatternsProject/Global.asax.cs" Line="6" Column="22" />
-      <File FileName="DesignPatternsProject/Global.asax" Line="1" Column="1" />
-      <File FileName="DesignPatternsProject/Web.config" Line="8" Column="4" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

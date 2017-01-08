@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{BFD6E022-A84E-4726-B865-0F9CCEB30B29}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TodoRESTService/Services/TodoRepository.cs">
+    <Files>
+      <File FileName="TodoRESTService/Services/TodoService.cs" Line="1" Column="1" />
+      <File FileName="TodoRESTService/Services/TodoRepository.cs" Line="13" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TodoRESTService PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

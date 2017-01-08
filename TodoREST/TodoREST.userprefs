@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{BFD6E022-A84E-4726-B865-0F9CCEB30B29}|">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/wdenejko/Documents/Repos/TodoRESTService/TodoRESTService/Controllers/TodoItemsController.cs" line="59" column="6" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TodoRESTService PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TodoREST.Droid PreferredExecutionTarget="Android.nexus2" />
+  <MonoDevelop.Ide.ItemProperties.TodoREST.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.77B3001B-4DEF-447F-998C-3315465D90EE" />
+  <MultiItemStartupConfigurations />
+</Properties>
